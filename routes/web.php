@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use App\Http\controllers\Admin\HomeController;
+use App\Http\controllers\Admin\PostController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +35,9 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         //Route::get('login','AuthenticatedSessionController@create')->name('login');
     });
     Route::middleware('admin')->group(function(){
-    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+        Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+        Route::get('/post', [PostController::class, 'index'])->name('post');
+        Route::get('/post/list', [PostController::class, 'getPost'])->name('post.list');
 
     });
     //Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
