@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use App\Http\controllers\Admin\HomeController;
 use App\Http\controllers\Admin\PostController;
 use App\Http\Controllers\PostController as usepost;
+use App\Models\Post;
 
 
 /*
@@ -19,7 +20,9 @@ use App\Http\Controllers\PostController as usepost;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $posts=Post::where('status','1')->get();  
+    dd($posts);
+    return view('welcome',compact('posts'));
 });
 
 // Route::get('/dashboard', function () {
@@ -49,6 +52,12 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
         Route::get('/post', [PostController::class, 'index'])->name('post');
         Route::get('/post/list', [PostController::class, 'getPost'])->name('post.list');
+        //delete
+        Route::delete('/admindeletepost/{id}', [PostController::class,'destroy'])->name('admindeletepost');
+        Route::get('/adminshowpost/{id}', [PostController::class,'show'])->name('adminshowpost');
+        Route::get('/statusupdateyes/{id}', [PostController::class,'statusyes'])->name('statusupdateyes');
+        Route::get('/statusupdateno/{id}', [PostController::class,'statusno'])->name('statusupdateno');
+        
 
     });
     //Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');

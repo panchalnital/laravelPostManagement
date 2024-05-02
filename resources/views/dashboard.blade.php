@@ -32,7 +32,7 @@
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->title }}</td>
                     <td>{{ \Illuminate\Support\Str::limit($item->content, 100, $end='...') }}</td>
-                    <td> {{ $item->file_path }}</td>
+                    <td> <img src="{{ url($item->file_path)}}" width="50px"></td>
                     <td>{{ $item->status==2 ? "Pending":"Active" }}</td>
                   <td>
                   
@@ -44,6 +44,7 @@
                     <button type="submit" class="fas fa-trash-alt" style="padding-top: 8px;"></button>
                     </form>
                     <a href="{{ route('showpost',$item->id) }}" class="fas fa-eye"></a>
+                    </td>
                   </tr>
                   @endforeach
                   </tbody>

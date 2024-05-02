@@ -24,7 +24,7 @@
                     </div>
                   <div class="form-group">
                     <label for="exampleInputFile">File  :</label>
-                    <label for="titleInput" lass="form-control" >{{ $post->file_path }}</label>
+                    <label for="titleInput" lass="form-control" > <img src="{{ url($post->file_path)}}" width="200px"></label>
                     
                   </div>
                 </div>
