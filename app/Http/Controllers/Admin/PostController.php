@@ -11,8 +11,14 @@ class PostController extends Controller
 {
     //
     public function index(){
-        $posts = Post::latest()->get();
-        return view('admin.post',compact('posts'));
+        try{
+            $posts = Post::latest()->get();
+            return view('addpost',compact('posts'));
+
+        }catch(Exception $exception){
+            Session::flash('error', 'Action failed! Please try again');
+        }
+    
        
     }
 
