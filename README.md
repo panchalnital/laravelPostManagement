@@ -18,7 +18,7 @@ Create a simple Laravel application for managing posts.-
 - git clone https://github.com/panchalnital/laravelPostManagement.git
 ``` 
 - laravel : clone the contents of the folder to the public folder of Apache2 (or another web server xampp copy in htdocs folder).
-- Database: Run the SQL code in the databasefile/laravelpostmanagement file & create your database with it.
+- Database: Run the SQL code in the databasefile/laravelpostmanagement.sql file & create your database with it.
 View 
  * Please execute the "npm install" && "npm run dev" commands to build your assets.
 ```
