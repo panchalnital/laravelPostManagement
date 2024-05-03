@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Post Management System</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -37,21 +37,45 @@
             @endif
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+                <div><h1 style="color:#e16225;">Laravel Post Management System</h1></div>
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <h1>Laravel nital Post Management System</h1>
-                    {{dd($posts)}}
+                   
+                   
                     @foreach($posts as $item)
                     
-                    <h1>Laravel nital Post Management System</h1>
-                    <h1>{{ $item->title }}</h1>
+                    <div class="col-lg-4 col-md-6 col-sm-12" style="padding-right: 13px;">
+                        <div class="frontside">
+                            <div class=" my-card card shadow-sm p-3 mb-5 bg-white rounded">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <img class="card-img user-img d-none d-sm-block" src="{{ url($item->file_path)}}" style="width: 199px;height: 97px;" alt="Card image"/>
+                                    </div>
+                                    
+                                    <div class="col-sm-9">
+                                        <div class="card-body-right">
+                                            <p class="card-title" style="font-family:Montserrat; font-size:15px">
+                                                <strong>Author Name : {{ $item->name }}</strong>
+                                                <br>
+                                                <span class="sub-title" style="line-height:17px">Title : {{ $item->title }}</span>
+                                            </p>
+                                            
+                                            <p class="card-text" style="font-family:Montserrat; font-size:15px">{{ \Illuminate\Support\Str::limit($item->content, 50, $end='...') }}</p>
+                                            
+                                            <a href="#trasteaprofile" data-toggle="modal" data-target="#trasteaprofile"><p style="font-family:Montserrat; font-size:15px">See More</p></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     @endforeach 
 
-                    @auth('admin')
+                    <!-- @auth('admin')
                     <a href="{{ route('admin.dashboard') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline" >Admin Login </a>
                     @else
                     <a href="{{ route('admin.login') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline" >Admin Login </a>
                     @endauth
-                   
+                    -->
                   
                 </div>
 

@@ -6,6 +6,7 @@ use App\Http\controllers\Admin\HomeController;
 use App\Http\controllers\Admin\PostController;
 use App\Http\Controllers\PostController as usepost;
 use App\Models\Post;
+use Illuminate\Support\Facades\DB;
 
 
 /*
@@ -20,8 +21,12 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    $posts=Post::where('status','1')->get();  
-    dd($posts);
+    $posts = DB::table('posts')
+    ->join('users', 'posts.user_id', '=', 'users.id')
+    ->where('posts.status', '1')
+    ->select('posts.*', 'users.name')
+    ->get();
+    
     return view('welcome',compact('posts'));
 });
 

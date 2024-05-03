@@ -34,7 +34,7 @@ class PostController extends Controller
             $posts->title=$request->input('title');
             $posts->content=$request->input('content');
             $posts->user_id=$request->user()->id;
-            $posts->status=2;
+            $posts->status='2';
         
             $posts->file_path=$request->file('file')->store('posts');
             $posts->save();
@@ -74,7 +74,7 @@ class PostController extends Controller
         $posts->title=$request->input('title');
         $posts->content=$request->input('content');
         $posts->user_id=$request->user()->id;
-        $posts->status=2;
+        $posts->status='2';
         if($request->file('file')){
             $posts->file_path=$request->file('file')->store('posts');
         }
