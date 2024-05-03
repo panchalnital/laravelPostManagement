@@ -26,6 +26,9 @@ View
 	npm install
 	npm run dev
 
+
+    php artisan migrate:fresh --seed
+    
     php artisan serve
 ```
 
@@ -46,6 +49,9 @@ Open your browser in http://127.0.0.1:8000/admin/login
 
 # admin Login 
 ![Alt text](public/projectsimage/adminlogin.PNG?raw=true "admin Login")
+
+# admin count 
+![Alt text](public/projectsimage/admincount.PNG?raw=true "admin count")
 
 # admin post managmenst page
 ![Alt text](public/projectsimage/adminpostmanagement.PNG?raw=true "admin post managmenst page")
