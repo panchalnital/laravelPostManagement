@@ -29,6 +29,8 @@ This is a small, symbolic project for a possible data security practice.
 - add Post
 - list
 
+![alt text](https://github.com/panchalnital/[reponame]/blob/laravelPostManagement/public/projectsimage/adminlogin.png?raw=true)
+
 ![Alt text](public/projectsimage/adminlogin.png?raw=true "adminlogin")
 
 ![plot](public/projectsimage/adminlogin.png)
