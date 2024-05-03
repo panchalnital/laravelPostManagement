@@ -35,7 +35,7 @@
               <div class="inner">
                 <h3>{{$posts}}</h3>
 
-                <p>New Orders</p>
+                <p>All Posts</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
