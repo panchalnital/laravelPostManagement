@@ -73,6 +73,9 @@ Open your browser in http://127.0.0.1:8000/
 # User Register
 ![Alt text](public/projectsimage/userRegisation.PNG?raw=true "User Register")
 
+# User Dasboard
+![Alt text](public/projectsimage/userDasboard.PNG?raw=true "User Dasboard")
+
 # User Add new Post
 ![Alt text](public/projectsimage/useraddpost.PNG?raw=true "User Add new Post")
 
