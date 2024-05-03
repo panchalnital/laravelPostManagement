@@ -30,3 +30,5 @@ This is a small, symbolic project for a possible data security practice.
 - list
 
 ![Alt text](laravelPostManagement/public/projectsimage/adminlogin.png?raw=true "adminlogin")
+
+![plot](laravelPostManagement/public/projectsimage/adminlogin.png)
